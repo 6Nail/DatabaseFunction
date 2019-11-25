@@ -1,0 +1,30 @@
+﻿<Window x:Class="HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="True" Name="dataGrid" Margin="0,0,0,4">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding TitleName}" Header="Название книги" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Author}" Header="Автор" Width="300"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена" Width="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Author:" HorizontalAlignment="Left" Width="50" Margin="10,78,0,8" Grid.Row="1"/>
+        <TextBox x:Name="authorTB" Margin="65,83,635,3" Grid.Row="1"/>
+        <Label Content="Title Name:" Margin="10,48,722,38" Grid.Row="1"/>
+        <TextBox x:Name="titleNameTB" Margin="78,48,622,38" Grid.Row="1"/>
+        <Label Content="Price:" Margin="10,12,740,74" Grid.Row="1"/>
+        <TextBox x:Name="priceTB" Margin="60,12,640,74" Grid.Row="1"/>
+        <Button x:Name="updateBtn" Click="UpdateBtnClick" Content="Обновить" Margin="650,12,50,73" Grid.Row="1"/>
+        <Button x:Name="addBtn" Click="AddBtnClick" Content="Добавить" Margin="650,58,50,28" Grid.Row="1" RenderTransformOrigin="0.5,0.552"/>
+    </Grid>
+</Window>
